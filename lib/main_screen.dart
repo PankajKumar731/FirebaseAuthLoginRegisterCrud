@@ -14,16 +14,16 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Welcome to logout")),
-      body: Center(
-          child: ElevatedButton(
-              onPressed: () {
-                firebaseAuth.signOut().then((value) => Navigator.of(context)
-                    .pushAndRemoveUntil(
-                        MaterialPageRoute(builder: (context) => LoginScreen()),
-                        (route) => false));
-              },
-              child: Text("Logout"))),
+      appBar: AppBar(title: Text("Welcome to logout"), actions: [
+        ElevatedButton(
+            onPressed: () {
+              firebaseAuth.signOut().then((value) => Navigator.of(context)
+                  .pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                      (route) => false));
+            },
+            child: Text("Logout"))
+      ]),
     );
   }
 }
