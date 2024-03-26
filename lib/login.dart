@@ -35,13 +35,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: const InputDecoration(
                     counterText: "",
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue, width: 4)),
+                        borderSide: BorderSide(color: Colors.black, width: 4)),
                     errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.red, width: 4)),
+                        borderSide: BorderSide(color: Colors.yellow, width: 4)),
                     focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.red, width: 4)),
+                        borderSide: BorderSide(color: Colors.yellow, width: 4)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue, width: 4))),
+                        borderSide: BorderSide(color: Colors.black, width: 4))),
                 style: const TextStyle(fontSize: 20),
                 maxLines: 1,
                 maxLength: 20,
@@ -65,13 +65,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: const InputDecoration(
                     counterText: "",
                     enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue, width: 4)),
+                        borderSide: BorderSide(color: Colors.black, width: 4)),
                     errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.red, width: 4)),
+                        borderSide: BorderSide(color: Colors.yellow, width: 4)),
                     focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.red, width: 4)),
+                        borderSide: BorderSide(color: Colors.yellow, width: 4)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue, width: 4))),
+                        borderSide: BorderSide(color: Colors.black, width: 4))),
                 style: const TextStyle(fontSize: 20),
                 maxLines: 1,
                 maxLength: 20,
