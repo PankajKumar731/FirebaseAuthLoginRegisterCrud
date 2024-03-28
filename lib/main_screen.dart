@@ -5,6 +5,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_application_1/login.dart';
 import 'package:form_field_application_1/notes_model.dart';
+import 'package:form_field_application_1/user_proifle.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -95,7 +96,13 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Welcome to logout"), actions: [
+      appBar: AppBar(title: Text("Welcome to App"), actions: [
+        ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => UserProfileScreen()));
+            },
+            child: Text("Profile")),
         ElevatedButton(
             onPressed: () {
               firebaseAuth.signOut().then((value) => Navigator.of(context)

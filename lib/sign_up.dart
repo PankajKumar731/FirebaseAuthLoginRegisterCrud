@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:form_field_application_1/model/user_model.dart';
 
 class signup extends StatefulWidget {
   const signup({super.key});
@@ -17,6 +19,7 @@ class _signupScreenState extends State<signup> {
   var passwordController = TextEditingController();
   var formKey = GlobalKey<FormState>();
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+  FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -164,10 +167,23 @@ class _signupScreenState extends State<signup> {
                                     email: emailcontroller.text.toString(),
                                     password:
                                         passwordController.text.toString())
-                                .then((value) => Navigator.pop(context))
-                                .onError((error, stackTrace) =>
-                                    Fluttertoast.showToast(
-                                        msg: error.toString()));
+                                .then((value) {
+                              var userModel = UserModel(
+                                  username: nameController.text.toString(),
+                                  mobileNumber:
+                                      mobilenocontroller.text.toString(),
+                                  email: emailcontroller.text.toString(),
+                                  uid: (firebaseAuth.currentUser?.uid ?? ""));
+                              firebaseFirestore
+                                  .collection("DetailsOfUser")
+                                  .add(userModel.toJson())
+                                  .then((value) => Navigator.of(context).pop())
+                                  .onError((error, stackTrace) =>
+                                      Fluttertoast.showToast(
+                                          msg: error.toString()));
+                            }).onError((error, stackTrace) {
+                              Fluttertoast.showToast(msg: error.toString());
+                            });
                           }
                         },
                         child: Text("Signup")),
