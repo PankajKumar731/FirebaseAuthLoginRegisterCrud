@@ -176,7 +176,9 @@ class _signupScreenState extends State<signup> {
                                   uid: (firebaseAuth.currentUser?.uid ?? ""));
                               firebaseFirestore
                                   .collection("DetailsOfUser")
-                                  .add(userModel.toJson())
+                                  .doc(firebaseAuth.currentUser?.uid ?? "")
+                                  .set(userModel.toJson())
+                                  //.add(userModel.toJson())
                                   .then((value) => Navigator.of(context).pop())
                                   .onError((error, stackTrace) =>
                                       Fluttertoast.showToast(

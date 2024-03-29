@@ -5,7 +5,9 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_application_1/login.dart';
 import 'package:form_field_application_1/notes_model.dart';
-import 'package:form_field_application_1/user_proifle.dart';
+import 'package:form_field_application_1/user_profile.dart';
+
+import 'future_data.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -100,7 +102,7 @@ class _MainScreenState extends State<MainScreen> {
         ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => UserProfileScreen()));
+                  MaterialPageRoute(builder: (context) => FutureDataScreen()));
             },
             child: Text("Profile")),
         ElevatedButton(
