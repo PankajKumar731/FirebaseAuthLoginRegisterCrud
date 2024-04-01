@@ -5,6 +5,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_application_1/login.dart';
 import 'package:form_field_application_1/notes_model.dart';
+import 'package:form_field_application_1/permissions/pick_image.dart';
 import 'package:form_field_application_1/user_profile.dart';
 
 import 'future_data.dart';
@@ -102,7 +103,7 @@ class _MainScreenState extends State<MainScreen> {
         ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => FutureDataScreen()));
+                  MaterialPageRoute(builder: (context) => PickImageScreen()));
             },
             child: Text("Profile")),
         ElevatedButton(
