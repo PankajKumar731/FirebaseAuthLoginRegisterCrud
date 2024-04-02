@@ -102,7 +102,8 @@ class _PickImageScreenState extends State<PickImageScreen> {
                   uploadTask.then((p0) => print("p0 $p0"));
                 } else {
                   uploadTask = ref.putFile(io.File(file.path), metadata);
-                  uploadTask.then((p0) => null);
+                  print("ref.getDownloadURL(); ${await ref.getDownloadURL()}");
+                  uploadTask.then((test) => null);
                 }
               },
               child: Text("upload Image"))
