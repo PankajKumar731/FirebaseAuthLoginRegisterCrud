@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:form_field_application_1/login.dart';
 import 'package:form_field_application_1/notes_model.dart';
 import 'package:form_field_application_1/permissions/pick_image.dart';
+import 'package:form_field_application_1/profile_screen.dart';
 import 'package:form_field_application_1/user_profile.dart';
 
 import 'future_data.dart';
@@ -103,7 +104,7 @@ class _MainScreenState extends State<MainScreen> {
         ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => PickImageScreen()));
+                  MaterialPageRoute(builder: (context) => profilescreen()));
             },
             child: Text("Profile")),
         ElevatedButton(
